@@ -13,6 +13,7 @@ RUN sudo apt-get install -y mongodb-org
 RUN apt-get install -y software-properties-common
 RUN sudo add-apt-repository ppa:webupd8team/java
 RUN sudo apt-get update
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 RUN sudo apt-get install -y oracle-java8-installer
 
 ##install_elasticsearch
@@ -48,8 +49,4 @@ RUN sudo apt-get install -y graylog-server
 
 
 ###RUN sudo start graylog-server
-
-
-
-
 
