@@ -13,32 +13,32 @@ RUN sudo apt-get install -y mongodb-org
 RUN apt-get install software-properties-common
 RUN sudo add-apt-repository ppa:webupd8team/java
 RUN sudo apt-get update
-RUN sudo apt-get install oracle-java8-installer
+RUN sudo apt-get install -y oracle-java8-installer
 
 ##install_elasticsearch
 
-RUN apt-get install apt-transport-https 
-RUN apt-get install vim
+RUN apt-get install -y apt-transport-https 
+RUN apt-get install -y vim
 RUN wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 RUN echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
-RUN sudo apt-get update && sudo apt-get install elasticsearch
+RUN sudo apt-get update && sudo apt-get install -y elasticsearch
 #####RUN sudo vim /etc/elasticsearch/elasticsearch.yml
 
 ##change_the_cluster_name= graylog
 
 RUN sudo update-rc.d elasticsearch defaults 95 10
 ##RUN sudo /etc/init.d/elasticsearch restart
-RUN apt-get install curl
+RUN apt-get install -y curl
 RUN curl 'http://localhost:9200/?pretty'
 
 
 ##graylog
 
-RUN sudo apt-get install apt-transport-https uuid-runtime pwgen
+RUN sudo apt-get install -y apt-transport-https uuid-runtime pwgen
 RUN wget https://packages.graylog2.org/repo/packages/graylog-2.0-repository_latest.deb
 RUN sudo dpkg -i graylog-2.0-repository_latest.deb
 RUN sudo apt-get update
-RUN sudo apt-get install graylog-server
+RUN sudo apt-get install -y graylog-server
 
 ##config_graylog-server_config
 
