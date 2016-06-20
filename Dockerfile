@@ -10,7 +10,7 @@ RUN sudo apt-get install -y mongodb-org
 
 ##install_java_8
 
-RUN apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 RUN sudo add-apt-repository ppa:webupd8team/java
 RUN sudo apt-get update
 RUN sudo apt-get install -y oracle-java8-installer
