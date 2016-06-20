@@ -27,7 +27,7 @@ RUN sudo apt-get update && sudo apt-get install elasticsearch
 ##change_the_cluster_name= graylog
 
 RUN sudo update-rc.d elasticsearch defaults 95 10
-##RUN sudo /etc/init.d/elasticsearch start
+##RUN sudo /etc/init.d/elasticsearch restart
 RUN apt-get install curl
 RUN curl 'http://localhost:9200/?pretty'
 
