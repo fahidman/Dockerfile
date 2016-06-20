@@ -12,5 +12,6 @@ sudo /etc/init.d/elasticsearch restart
 3) sudo vim /etc/graylog/server/server.conf
 
 configure the graylog-server
+Follow the instructions in your "/etc/graylog/server/server.conf" and add "password_secret" and "root_password_sha2". These settings are mandatory and without them, Graylog will not start!
 
 then run sudo start graylog-server
