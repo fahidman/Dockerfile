@@ -30,7 +30,7 @@ RUN sudo apt-get update && sudo apt-get install -y elasticsearch
 RUN sudo update-rc.d elasticsearch defaults 95 10
 ##RUN sudo /etc/init.d/elasticsearch restart
 RUN apt-get install -y curl
-RUN curl 'http://localhost:9200/?pretty'
+
 
 
 ##graylog
